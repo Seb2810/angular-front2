@@ -1,0 +1,90 @@
+
+<div class="text-4xl font-bold text-green-600 mx-4 md:mx-auto max-w-screen-md mt-8">ONE TO MANY</div>
+<div *ngIf="client">
+<ng-container *ngFor="let clt of client index as i ; trackBy:identify">
+ <div class="bg-white rounded-3xl mx-4 md:mx-auto max-w-screen-md border-2 border-gray-800 mt-16">
+    <div class="px-8 py-6 md:p-10">
+     <p>Auteur :</p>
+     <p>ID : {{clt.id }}</p>
+
+<p class="first-letter:uppercase text-4xl md:text-5xl font-medium leading-tight text-gray-800 mb-6"><b>{{clt.firstName}} </b> &nbsp; <b class="first-letter:uppercase"> {{clt.lastName}} </b></p>
+
+
+
+<!--<div>{{ bookTitle }}</div>-->
+
+
+
+
+<form (ngSubmit)="onSubmit(nameInput, clt.id)">
+
+
+
+    <label>Ajouter un Romans : &nbsp;</label>
+
+<input class="border border-gray-800" #nameInput  name="nameval"    value="">
+
+
+<!-- <input  type="text"  name="idval" [value]=clt.id> inutile pris automatiquement dans ngSubmit onSubmit (clt.id)-->
+
+<button type="submit" class="ml-2 text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">SAVE</button>
+</form>
+
+
+<!--form to delete all book + user by id-->
+<div>
+<hr/>
+<p class="text-md text-purple-800"> Warning  Delete all book + user by id </p>
+
+<form  (ngSubmit)="onDeleteAllMany(clt.id)">
+
+ <!-- <input  type="text"  type="hidden"  name="id"  [value]=clt.id>-->
+
+
+<button type="submit" class="ml-2 text-white bg-purple-800 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">DELETE ALL</button>
+  </form>
+
+</div>
+
+<div *ngIf="clt.romans">
+<!--<p>nested : {{clt.romans.name}}</p>--->
+<div *ngFor="let vals of clt.romans index as i ">
+
+   <p class="text-slate-500 text-lg">✔ {{vals.name}}</p>
+  <!--<p><b>{{vals.name}}</b></p>--->
+<p class="text-green-500 "> UPDATE Roman</p>
+
+ <p>
+    <input #editName
+           class=" py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
+           [value]="vals.name">
+
+    <button
+      (click)="updateRoman(vals.id, editName.value, clt.id)"
+      class="ml-2 text-white bg-blue-500 px-3 py-1 rounded">
+      UPDATE
+    </button>
+  </p>
+<!--form to delete by id-->
+<p class="text-red-500 ">🔥 Delete ROMAN :</p>
+
+ <p class="ml-2 text-md leading-tight font-medium text-red-800 hover:text-red-400">{{vals.name}}</p>
+<form (ngSubmit)="onDeletemany(vals.id, clt.id)" class="mb-3">
+
+
+ <!-- <input  type="text"  type="text"  name="id"  [value]="vals.id">-->
+
+<button type="submit" class="ml-2 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-base text-sm px-8 py-2.5 text-center leading-5">DELETE</button>
+  </form>
+
+
+</div>
+
+  </div>
+
+  </div>
+
+  </div>
+
+</ng-container>
+</div>

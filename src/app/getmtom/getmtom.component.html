@@ -1,0 +1,89 @@
+<div class="text-4xl font-bold text-green-600 mx-4 md:mx-auto max-w-screen-md mt-8">MANY TO MANY</div>
+<div *ngIf="client">
+<ng-container *ngFor="let clt of client index as i ; trackBy:identify">
+
+<div class="bg-white rounded-3xl mx-4 md:mx-auto max-w-screen-md border-2 border-gray-800 mt-16">
+    <div class="px-8 py-6 md:p-10">
+     <p>Auteur :</p>
+<p>ID  : {{clt.id}}</p>
+
+<p class="first-letter:uppercase text-4xl md:text-5xl font-medium leading-tight text-gray-800 mb-6"><b>{{clt.firstName}}</b> &nbsp; <b class="first-letter:uppercase"> {{clt.lastName}} </b></p>
+
+<div>
+
+
+ <form (ngSubmit)="onSubmit(nameInput, clt.id)">
+
+
+
+    <label>Ajouter un Livre : &nbsp; </label>
+
+<input class="border border-gray-800" #nameInput  name="nameval"    value="">
+
+  <!--- <input  type="text"  type="hidden"  name="idval" [value]=clt.id> -->
+
+<button type="submit" class="ml-2 text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">SAVE</button>
+</form>
+
+
+
+<hr/>
+<p class="text-md text-purple-800"> Warning  Delete all book + user by id </p>
+
+<form   (ngSubmit)="onDeletAllmany(clt.id)">
+
+  <!--<input  type="text"   name="id"  [value]=clt.id>-->
+
+
+<button type="submit" class="ml-2 text-white bg-purple-800 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">DELETE ALL</button>
+  </form>
+</div>
+
+<div *ngIf="clt.livres">
+
+<div *ngFor="let vals of clt.livres index as i">
+
+
+   <p class="text-slate-500 text-lg">✔ {{vals.name}}</p>
+
+
+
+  <p class="text-green-500 "> UPDATE Livre </p>
+
+  <form
+  (ngSubmit)="updateLivre(vals.id, nameEdit.value, clt.id)"
+  class="mt-2 mb-3"
+>
+  <input
+    class="border border-gray-800 mr-2"
+    #nameEdit
+    [value]="vals.name"
+  >
+
+  <button
+    type="submit"
+    class="text-white bg-blue-500 px-3 py-1 rounded"
+  >
+    UPDATE
+  </button>
+</form>
+
+
+
+<p class="text-red-500 ">🔥 Delete Livre :</p>
+
+<p class="ml-2 text-md leading-tight font-medium text-red-800 hover:text-red-400">{{vals.name}}</p>
+
+  <form   (ngSubmit)="onDeletemanytomany(clt.id ,vals.id)" class="mb-3">
+
+<button type="submit" class="ml-2 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-base text-sm px-8 py-2.5 text-center leading-5">DELETE</button>
+    </form>
+
+  </div>
+  </div>
+
+ </div>
+  </div>
+</ng-container>
+</div>
+
