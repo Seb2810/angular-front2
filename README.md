@@ -44,7 +44,7 @@ npx tailwindcss init
 
 Dans tailwind.config.js :
 
-/** @type {import('tailwindcss').Config} */
+| `/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/**/*.{html,ts}"
@@ -54,7 +54,7 @@ module.exports = {
   },
   plugins: [],
 }
-
+` |
 
 ⚠️ Très important sinon Tailwind ne génère aucun style.
 
