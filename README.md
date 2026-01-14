@@ -309,8 +309,11 @@ onDeletemany(romanId: number , authorId: number,): void {
 ```
 ## Communication avec le server 
 
-l'url private baseUrl = `${environment.apiUrl}/auteurmany`;
+L'url private  :
 
+```ts
+baseUrl = `${environment.apiUrl}/auteurmany`;
+```
 fait reference au serveur express plus précisément la route auteurmany du fichier routes/auteurmany.route.js
 
 sur cette route router.post('/add', createManyTodos);
