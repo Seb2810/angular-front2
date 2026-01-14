@@ -91,7 +91,7 @@ Dans ton composant.html
 | `<div *ngFor="let vals of clt.romans; trackBy: trackByRomanId">` |
 
 Dans ton composant .ts
-
+```js
 trackByClientId(index: number, item: any) {
   return item.id;
 }
@@ -99,7 +99,7 @@ trackByClientId(index: number, item: any) {
 trackByRomanId(index: number, item: any) {
   return item.id;
 }
-
+```
 -----
 
 ## Fonctionnement du component one to many
