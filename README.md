@@ -1,4 +1,4 @@
-## Angrest Front-end 
+## &#127808; Angrest Front-end 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
 
@@ -368,7 +368,7 @@ export class InsertmanyComponent {
 
 ```
 
-## Dans le component qui affiche la liste , on sousrcit à l'observable est ses changements et si il y en a on reload la liste 
+## Dans le component qui affiche la liste, on sousrcit à l'observable et ses changements et si il y en a on reload la liste 
 
 ```ts
 export class GetmanyComponent {
@@ -388,6 +388,6 @@ export class GetmanyComponent {
     });
   }
 ```
-## Le private refreshService: RefreshService doit se trouver dans les 2 classes celle qui souscrit à lobserveur et celle qui observe ce service est la liaison entre ces classes
+&#128736; Le private refreshService: RefreshService doit se trouver dans les 2 classes celle qui souscrit à lobserveur et celle qui observe ce service est la liaison entre ces classes
 
 
