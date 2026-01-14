@@ -30,7 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 npm install -D tailwindcss postcss autoprefixer
 
-## Initialiser Tailwind ==> créra tailwind.config.js
+## Initialiser Tailwind → créer le  tailwind.config.js
 
 npx tailwindcss init
 
