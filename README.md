@@ -42,19 +42,20 @@ npx tailwindcss init
 
 ## Configurer Tailwind pour Angular
 
-Dans tailwind.config.js :
+Dans `tailwind.config.js` :
 
-| `/** @type {import('tailwindcss').Config} */` |
-| `module.exports = {` |
-| `  content: [` |
-| `    "./src/**/*.{html,ts}"` |
-| `  ],` |
-| `  theme: {` |
-| `    extend: {},` |
-| `  },` |
-| `  plugins: [],` |
-| `}` |
-| `` |
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
 
 ⚠️ Très important sinon Tailwind ne génère aucun style.
 
