@@ -1,5 +1,7 @@
 ## &#127808; Angrest Front-end 
 
+→ Complete CRUD FRONT for express sequelize server avaiable at  https://github.com/Seb2810/express-server2
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
 
 ## Development server
