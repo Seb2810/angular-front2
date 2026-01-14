@@ -1,13 +1,6 @@
 ## Angrest
 
 
-| Effet | Syntaxe |
-|---|---|
-| Souligner | `<u>texte</u>` |
-| Colorer | `<span style="color:red">texte</span>` |
-| Les deux | `<u><span style="color:red">texte</span></u>` |
-| Markdown pur | ❌ impossible |
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
 
 ## Development server
@@ -94,7 +87,7 @@ Utiliser trackBy
 
 Dans ton composant.html
 
-<div *ngFor="let vals of clt.romans; trackBy: trackByRomanId">
+| `<div *ngFor="let vals of clt.romans; trackBy: trackByRomanId">` |
 
 Dans ton composant .ts
 
