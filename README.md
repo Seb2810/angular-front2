@@ -84,9 +84,9 @@ ng serve
 > [!NOTE]
 >Résolution des doublons en *ngFor
 
-Utiliser trackBy
+&#128477; Utiliser trackBy
 
-Dans ton composant.html
+Dans le composant.html
 
 | `<div *ngFor="let vals of clt.romans; trackBy: trackByRomanId">` |
 
@@ -105,14 +105,14 @@ trackByRomanId(index: number, item: any) {
 ## Fonctionnement du component one to many
 
 A la racine environment/environment.ts configuré en local
-
+```ts
 export const environment = {
   production: true,
   apiUrl: 'http://localhost:3000'
 };
-
+```
 ## Creation du service pour se connecter au server express sur le port 3000
-
+```ts
  interface Roman {
   id: number;
   name: string;
@@ -186,9 +186,9 @@ export class OnetomanyService {
     );
   }
 }
-
+```
 ## Le component getmany.component.ts
-
+```ts
 interface Clients {
 
   id : number;
@@ -306,7 +306,7 @@ onDeletemany(romanId: number , authorId: number,): void {
       });
   }
 }
-
+```
 ## Communication avec le server 
 
 l'url private baseUrl = `${environment.apiUrl}/auteurmany`;
@@ -319,7 +319,7 @@ createManyTodos est une fonction du controller appelé quand la route add est at
 
 Le refresh service : rafraichit la liste des ecrvains après ajout  d'un ecrivain + un livre
 
-
+```ts
 @Injectable({ providedIn: 'root' })
 export class RefreshService {
   private refreshSource = new Subject<void>();
@@ -329,10 +329,10 @@ export class RefreshService {
     this.refreshSource.next();
   }
 }
-
+```
 
 ## On rafraichit la liste dans le component
-
+```ts
 export class InsertmanyComponent {
 
   title = 'Insert one to many';
@@ -378,10 +378,11 @@ export class InsertmanyComponent {
 
 }
 
+```
 
 ## Dans le component qui affiche la liste , on sousrcit à l'observable est ses changements et si il y en a on reload la liste 
 
-
+```ts
 export class GetmanyComponent {
 
   client: Clients[] = [];
@@ -398,7 +399,7 @@ export class GetmanyComponent {
       this.loadData();
     });
   }
-
+```
 ## Le private refreshService: RefreshService doit se trouver dans les 2 classes celle qui souscrit à lobserveur et celle qui observe ce service est la liaison entre ces classes
 
 
