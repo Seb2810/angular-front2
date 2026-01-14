@@ -79,8 +79,8 @@ cd C:/ angular-front2
 
 ng serve
 
-
-## -Résolution des doublons en *ngFor
+> [!NOTE]
+>Résolution des doublons en *ngFor
 
 Utiliser trackBy
 
