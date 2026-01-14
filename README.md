@@ -56,7 +56,7 @@ module.exports = {
   plugins: [],
 }
 
-
+```
 ⚠️ Très important sinon Tailwind ne génère aucun style.
 
 ## Ajouter Tailwind dans les styles globaux
