@@ -84,11 +84,11 @@ ng serve
 
 Utiliser trackBy
 
-composant.html
+-_Dans ton composant.html_-
 
 <div *ngFor="let vals of clt.romans; trackBy: trackByRomanId">
 
-Dans ton composant .ts
+-_Dans ton composant .ts_-
 
 trackByClientId(index: number, item: any) {
   return item.id;
