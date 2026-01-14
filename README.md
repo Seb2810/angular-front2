@@ -62,7 +62,7 @@ module.exports = {
 ## Ajouter Tailwind dans les styles globaux
 
 Dans src/styles.css (ou styles.scss) :
-
+```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,7 +74,7 @@ Dans la section "styles" :
 "styles": [
   "src/styles.css"
 ]
-
+```
 ## Lancer l'application
 
 cd C:/ angular-front2
